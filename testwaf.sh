@@ -14,3 +14,7 @@ curl -X POST $JUICESHOP_URL -F "user='AND 1=1;"
 # This imitates a Cross Site Scripting attack in GET request
 # This request should be blocked.
 curl $JUICESHOP_URL -F "user='<script><alert>Hello></alert></script>'"
+
+# This imitates bad bot user agent "havij"
+# This request should be blocked.
+curl $JUICESHOP_URL -A"havij"
